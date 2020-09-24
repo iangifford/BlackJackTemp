@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BlackJack</string>
+    <string name="new_game">NEW GAME</string>
+    <string name="hit">HIT</string>
+    <string name="stop">STOP</string>
+    <string name="dealer_tag">Dealer</string>
+    <string name="player_tag">Player</string>
+    <string name="score_tag">Player  -  SCORE  -  Dealer</string>
+    <string name="dealer_card_1">Dealer Card 1</string>
+    <string name="dealer_card_2">Dealer Card 2</string>
+    <string name="dealer_card_3">Dealer Card 3</string>
+    <string name="dealer_card_4">Dealer Card 4</string>
+    <string name="dealer_card_5">Dealer Card 5</string>
+    <string name="dealer_card_6">Dealer Card 6</string>
+    <string name="dealer_card_7">Dealer Card 7</string>
+    <string name="dealer_card_8">Dealer Card 8</string>
+    <string name="player_card_1">Player Card 1</string>
+    <string name="player_card_2">Player Card 2</string>
+    <string name="player_card_3">Player Card 3</string>
+    <string name="player_card_4">Player Card 4</string>
+    <string name="player_card_5">Player Card 5</string>
+    <string name="player_card_6">Player Card 6</string>
+    <string name="player_card_7">Player Card 7</string>
+    <string name="player_card_8">Player Card 8</string>
+</resources>
