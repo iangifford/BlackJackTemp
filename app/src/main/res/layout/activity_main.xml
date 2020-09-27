@@ -20,35 +20,36 @@
     <TextView
         android:id="@+id/player_score_field"
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="15dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/score_field"
-        android:textSize="30sp"
-        android:textColor="@color/colorBlack"
         android:layout_alignStart="@+id/score_field"
-        android:gravity="center_vertical|center_horizontal" />
+        android:layout_marginBottom="15dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/dealer_score_field"
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="15dp"
+        android:layout_height="20dp"
         android:layout_below="@+id/score_field"
-        android:textSize="30sp"
-        android:textColor="@color/colorBlack"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_toEndOf="@+id/player_score_field"
         android:layout_alignEnd="@+id/score_field"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/player_score_field"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp" />
 
     <View
         android:id="@+id/game_background"
-        android:background="@color/colorLightGreen"
         android:layout_width="320dp"
-        android:layout_height="500dp"
+        android:layout_height="480dp"
         android:layout_below="@+id/player_score_field"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorLightGreen" />
 
     <TextView
         android:id="@+id/dealer_tag"
@@ -66,79 +67,54 @@
         android:layout_height="100dp"
         android:layout_below="@+id/dealer_tag"
         android:layout_alignStart="@id/game_background"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/cards_01"
-        android:contentDescription="@string/dealer_card_1" />
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/dealer_card_1"
+        android:src="@drawable/cards_01" />
 
     <ImageView
         android:id="@+id/dealer_card_2"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_below="@+id/dealer_tag"
-        android:layout_alignStart="@id/dealer_card_1"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_02"
-        android:contentDescription="@string/dealer_card_2" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/dealer_card_2"
+        android:src="@drawable/cards_02" />
 
     <ImageView
         android:id="@+id/dealer_card_3"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_below="@+id/dealer_tag"
-        android:layout_alignStart="@id/dealer_card_2"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_03"
-        android:contentDescription="@string/dealer_card_3" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/dealer_card_3"
+        android:src="@drawable/cards_03" />
 
     <ImageView
         android:id="@+id/dealer_card_4"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_below="@+id/dealer_tag"
-        android:layout_alignStart="@id/dealer_card_3"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_04"
-        android:contentDescription="@string/dealer_card_4" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="242dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/dealer_card_4"
+        android:src="@drawable/cards_04" />
 
     <ImageView
         android:id="@+id/dealer_card_5"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_below="@+id/dealer_card_1"
-        android:layout_alignStart="@id/game_background"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/cards_05"
-        android:contentDescription="@string/dealer_card_5" />
-
-    <ImageView
-        android:id="@+id/dealer_card_6"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/dealer_card_1"
-        android:layout_alignStart="@id/dealer_card_5"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_06"
-        android:contentDescription="@string/dealer_card_6" />
-
-    <ImageView
-        android:id="@+id/dealer_card_7"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/dealer_card_1"
-        android:layout_alignStart="@id/dealer_card_6"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_07"
-        android:contentDescription="@string/dealer_card_7" />
-
-    <ImageView
-        android:id="@+id/dealer_card_8"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/dealer_card_1"
-        android:layout_alignStart="@id/dealer_card_7"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_08"
-        android:contentDescription="@string/dealer_card_8" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/dealer_card_5"
+        android:src="@drawable/cards_05" />
 
     <TextView
         android:id="@+id/winner_field"
@@ -167,111 +143,89 @@
         android:layout_height="100dp"
         android:layout_above="@+id/player_tag"
         android:layout_alignStart="@id/game_background"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/cards_40"
-        android:contentDescription="@string/player_card_1" />
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/player_card_1"
+        android:src="@drawable/cards_40" />
 
     <ImageView
         android:id="@+id/player_card_2"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_above="@+id/player_tag"
-        android:layout_alignStart="@id/player_card_1"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_41"
-        android:contentDescription="@string/player_card_2" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="83dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/player_card_2"
+        android:src="@drawable/cards_41" />
 
     <ImageView
         android:id="@+id/player_card_3"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_above="@+id/player_tag"
-        android:layout_alignStart="@id/player_card_2"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_42"
-        android:contentDescription="@string/player_card_3" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="162dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/player_card_3"
+        android:src="@drawable/cards_42" />
 
     <ImageView
         android:id="@+id/player_card_4"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_above="@+id/player_tag"
-        android:layout_alignStart="@id/player_card_3"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_43"
-        android:contentDescription="@string/player_card_4" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="241dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/player_card_4"
+        android:src="@drawable/cards_43" />
 
     <ImageView
         android:id="@+id/player_card_5"
         android:layout_width="75dp"
         android:layout_height="100dp"
         android:layout_above="@+id/player_card_1"
-        android:layout_alignStart="@id/game_background"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/cards_44"
-        android:contentDescription="@string/player_card_5" />
-
-    <ImageView
-        android:id="@+id/player_card_6"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/player_card_1"
-        android:layout_alignStart="@id/player_card_5"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_45"
-        android:contentDescription="@string/player_card_6" />
-
-    <ImageView
-        android:id="@+id/player_card_7"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/player_card_1"
-        android:layout_alignStart="@id/player_card_6"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_46"
-        android:contentDescription="@string/player_card_7" />
-
-    <ImageView
-        android:id="@+id/player_card_8"
-        android:layout_width="75dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/player_card_1"
-        android:layout_alignStart="@id/player_card_7"
-        android:layout_marginStart="75dp"
-        android:src="@drawable/cards_47"
-        android:contentDescription="@string/player_card_8" />
+        android:layout_alignStart="@+id/game_background"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/player_card_5"
+        android:src="@drawable/cards_44" />
 
     <Button
         android:id="@+id/new_game_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/game_background"
+        android:layout_alignStart="@id/score_field"
+        android:layout_marginTop="-5dp"
         android:background="@color/colorGreen"
         android:onClick="new_game"
-        android:text="@string/new_game"
-        android:layout_alignStart="@id/score_field"
-        android:layout_below="@+id/game_background"
-        android:layout_height="50dp"
-        android:layout_width="100dp" />
+        android:text="@string/new_game" />
 
     <Button
         android:id="@+id/hit_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/game_background"
-        android:layout_toEndOf="@+id/new_game_button"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/new_game_button"
         android:background="@color/colorYellow"
         android:onClick="hit"
-        android:text="@string/hit"
-        android:layout_height="50dp"
-        android:layout_width="100dp" />
+        android:text="@string/hit" />
 
     <Button
         android:id="@+id/stop_button"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/game_background"
-        android:layout_toEndOf="@+id/hit_button"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/hit_button"
         android:background="@color/colorRed"
         android:onClick="stop"
-        android:text="@string/stop"
-        android:layout_height="50dp"
-        android:layout_width="100dp"/>
+        android:text="@string/stop" />
 
 
 </RelativeLayout>

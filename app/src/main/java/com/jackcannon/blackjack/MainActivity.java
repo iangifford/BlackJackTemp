@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
         playerCards[2] = (ImageView) findViewById(R.id.player_card_3);
         playerCards[3] = (ImageView) findViewById(R.id.player_card_4);
         playerCards[4] = (ImageView) findViewById(R.id.player_card_5);
-        playerCards[5] = (ImageView) findViewById(R.id.player_card_6);
-        playerCards[6] = (ImageView) findViewById(R.id.player_card_7);
-        playerCards[7] = (ImageView) findViewById(R.id.player_card_8);
+
 
         //Cards assigned to the dealer
         dealerCards = new ImageView[8];
@@ -57,9 +55,6 @@ public class MainActivity extends AppCompatActivity {
         dealerCards[2] = (ImageView) findViewById(R.id.dealer_card_3);
         dealerCards[3] = (ImageView) findViewById(R.id.dealer_card_4);
         dealerCards[4] = (ImageView) findViewById(R.id.dealer_card_5);
-        dealerCards[5] = (ImageView) findViewById(R.id.dealer_card_6);
-        dealerCards[6] = (ImageView) findViewById(R.id.dealer_card_7);
-        dealerCards[7] = (ImageView) findViewById(R.id.dealer_card_8);
 
         //Scores
         playerScore = (TextView) findViewById(R.id.player_score_field);
