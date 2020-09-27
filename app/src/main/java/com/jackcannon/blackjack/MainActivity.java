@@ -14,6 +14,7 @@ import android.widget.TextView;
  * Dr. Raunak
  * @author Jack Cannon
  * @author Ian Gifford
+ * @version 1.0 Initial Build
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -83,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         blackJackGame.hit("dealer");
         blackJackGame.hit("player");
         blackJackGame.hit("dealer");
-        blackJackGame.hit_count = 0;
     }
 
     /**
@@ -95,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
         //"player" will be the only user capable of selecting the Hit button
         blackJackGame.hit("player");
-
-        //After 3 hits, prevent user from clicking Hit button
-        if(blackJackGame.hit_count == 3) {
-            hitButton.setEnabled(false);
-        }
 
         //After every hit, check if the game has been won or tied
         if(blackJackGame.isOver()){
