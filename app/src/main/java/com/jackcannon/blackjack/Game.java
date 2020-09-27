@@ -5,6 +5,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
+
 public class Game {
 
     Deck deck;
@@ -37,26 +39,25 @@ public class Game {
 
     public void swapPlayer() {
         hit_count = 0;
-        if(!current_player.equals("player")){
+        if (!current_player.equals("player")) {
             current_player = "dealer";
-        }
-        else current_player = "player";
+        } else current_player = "player";
     }
 
     public Card dealCard() {
 
-        //TODO implement method to return the next card from the deck
-        return new Card("","",1,3);
+        Card drawnCard = this.deck.draw();
+
+
+        return drawnCard;
     }
 
     public void executeDealerTurn() {
 
-        //TODO implement logic for random dealer play
-        /*
-            hitButton.setEnabled(true);
-            stopButton.setEnabled(true);
-        }
-         */
+        hit("dealer");
+        hitButton.setEnabled(true);
+        stopButton.setEnabled(true);
+
 
     }
 
@@ -82,9 +83,9 @@ public class Game {
             }
         }
 
-        if (player.equals("dealer")){
-            for(int i=0; i < 8; i++) {
-                if(dealerCards[i].getVisibility() == View.INVISIBLE) {
+        if (player.equals("dealer")) {
+            for (int i = 0; i < 8; i++) {
+                if (dealerCards[i].getVisibility() == View.INVISIBLE) {
                     dealerCards[i].setImageResource(resource);
                     dealerScore_int += hit_card.point_value;
                     dealerScore.setText(dealerScore_int);
@@ -98,7 +99,7 @@ public class Game {
     }
 
     public void resetGame() {
-        for(int i=0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) {
             playerCards[i].setVisibility(View.INVISIBLE);
             dealerCards[i].setVisibility(View.INVISIBLE);
             playerCards[i].setImageResource(0);
