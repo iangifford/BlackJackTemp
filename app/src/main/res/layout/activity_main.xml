@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLightBlue"
     tools:context=".MainActivity">
 
+    <!-- Score Display Fields -->
     <TextView
         android:id="@+id/score_field"
         android:layout_width="320dp"
@@ -16,22 +18,20 @@
         android:textSize="20sp"
         android:gravity="center_vertical|center_horizontal"
         android:layout_centerHorizontal="true" />
-
     <TextView
         android:id="@+id/player_score_field"
         android:layout_width="150dp"
-        android:layout_height="20dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/score_field"
         android:layout_alignStart="@+id/score_field"
         android:layout_marginBottom="15dp"
         android:gravity="center_vertical|center_horizontal"
         android:textColor="@color/colorBlack"
         android:textSize="30sp" />
-
     <TextView
         android:id="@+id/dealer_score_field"
         android:layout_width="300dp"
-        android:layout_height="20dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/score_field"
         android:layout_alignEnd="@+id/score_field"
         android:layout_centerHorizontal="true"
@@ -41,6 +41,7 @@
         android:textColor="@color/colorBlack"
         android:textSize="30sp" />
 
+    <!-- GameBoard Identification -->
     <View
         android:id="@+id/game_background"
         android:layout_width="320dp"
@@ -51,6 +52,7 @@
         android:layout_marginBottom="15dp"
         android:background="@color/colorLightGreen" />
 
+    <!-- Dealer / Dealer Cards Layout -->
     <TextView
         android:id="@+id/dealer_tag"
         android:layout_width="wrap_content"
@@ -60,7 +62,6 @@
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"/>
-
     <ImageView
         android:id="@+id/dealer_card_1"
         android:layout_width="75dp"
@@ -69,9 +70,7 @@
         android:layout_alignStart="@id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:contentDescription="@string/dealer_card_1"
-        android:src="@drawable/cards_01" />
-
+        android:contentDescription="@string/dealer_card_1" />
     <ImageView
         android:id="@+id/dealer_card_2"
         android:layout_width="75dp"
@@ -80,9 +79,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="83dp"
         android:layout_marginTop="4dp"
-        android:contentDescription="@string/dealer_card_2"
-        android:src="@drawable/cards_02" />
-
+        android:contentDescription="@string/dealer_card_2" />
     <ImageView
         android:id="@+id/dealer_card_3"
         android:layout_width="75dp"
@@ -91,9 +88,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="162dp"
         android:layout_marginTop="4dp"
-        android:contentDescription="@string/dealer_card_3"
-        android:src="@drawable/cards_03" />
-
+        android:contentDescription="@string/dealer_card_3" />
     <ImageView
         android:id="@+id/dealer_card_4"
         android:layout_width="75dp"
@@ -102,9 +97,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="242dp"
         android:layout_marginTop="4dp"
-        android:contentDescription="@string/dealer_card_4"
-        android:src="@drawable/cards_04" />
-
+        android:contentDescription="@string/dealer_card_4" />
     <ImageView
         android:id="@+id/dealer_card_5"
         android:layout_width="75dp"
@@ -113,20 +106,23 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
-        android:contentDescription="@string/dealer_card_5"
-        android:src="@drawable/cards_05" />
+        android:contentDescription="@string/dealer_card_5" />
 
+    <!-- Field to identify the Game Winner -->
     <TextView
         android:id="@+id/winner_field"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@id/dealer_card_5"
+        android:layout_below="@id/dealer_card_3"
+        android:layout_above="@id/player_card_3"
+        android:layout_toEndOf="@+id/dealer_card_5"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:textSize="35sp"
+        android:textSize="60sp"
         android:textColor="@color/colorPrimaryDark"
         android:layout_centerHorizontal="true" />
 
+    <!-- Player / Player Cards Layout -->
     <TextView
         android:id="@+id/player_tag"
         android:layout_width="wrap_content"
@@ -136,7 +132,6 @@
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"/>
-
     <ImageView
         android:id="@+id/player_card_1"
         android:layout_width="75dp"
@@ -145,9 +140,7 @@
         android:layout_alignStart="@id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_1"
-        android:src="@drawable/cards_40" />
-
+        android:contentDescription="@string/player_card_1" />
     <ImageView
         android:id="@+id/player_card_2"
         android:layout_width="75dp"
@@ -156,9 +149,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="83dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_2"
-        android:src="@drawable/cards_41" />
-
+        android:contentDescription="@string/player_card_2" />
     <ImageView
         android:id="@+id/player_card_3"
         android:layout_width="75dp"
@@ -167,9 +158,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="162dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_3"
-        android:src="@drawable/cards_42" />
-
+        android:contentDescription="@string/player_card_3" />
     <ImageView
         android:id="@+id/player_card_4"
         android:layout_width="75dp"
@@ -178,9 +167,7 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="241dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_4"
-        android:src="@drawable/cards_43" />
-
+        android:contentDescription="@string/player_card_4" />
     <ImageView
         android:id="@+id/player_card_5"
         android:layout_width="75dp"
@@ -189,9 +176,9 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_5"
-        android:src="@drawable/cards_44" />
+        android:contentDescription="@string/player_card_5" />
 
+    <!-- GamePlay Buttons -->
     <Button
         android:id="@+id/new_game_button"
         android:layout_width="100dp"
@@ -202,7 +189,6 @@
         android:background="@color/colorGreen"
         android:onClick="new_game"
         android:text="@string/new_game" />
-
     <Button
         android:id="@+id/hit_button"
         android:layout_width="100dp"
@@ -214,7 +200,6 @@
         android:background="@color/colorYellow"
         android:onClick="hit"
         android:text="@string/hit" />
-
     <Button
         android:id="@+id/stop_button"
         android:layout_width="100dp"
@@ -226,6 +211,5 @@
         android:background="@color/colorRed"
         android:onClick="stop"
         android:text="@string/stop" />
-
 
 </RelativeLayout>
