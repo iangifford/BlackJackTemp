@@ -1,5 +1,9 @@
 package com.jackcannon.blackjack;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Arrays;
+
 public class Deck {
 
     Card[] deck = new Card[52];
@@ -64,8 +68,9 @@ public class Deck {
     }
 
     public void shuffle(){
-
-        //TODO WRITE A SHUFFLE ALGORITHM FOR THE CARDS
+        List<Card> tempList = Arrays.asList(this.deck);
+        Collections.shuffle(tempList);
+        tempList.toArray(this.deck);
 
     }
 }
