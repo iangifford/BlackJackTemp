@@ -57,22 +57,6 @@ public class Game {
     }
 
     /**
-     * Swap Player method
-     * Switches which player has control of the buttons, and where the cards are dealt
-     */
-    public void swapPlayer() {
-        if (current_player.equals("player")) {
-            current_player = "dealer";
-            hitButton.setEnabled(false);
-        } else {
-            current_player = "player";
-            hitButton.setEnabled(true);
-        }
-
-
-    }
-
-    /**
      * Deal Card Method
      * @return the next card to be played, as selected from the deck
      */
@@ -85,10 +69,14 @@ public class Game {
      * Randomly selects the next action(s) taken by the dealer, based on the probability of bust
      */
     public void executeDealerTurn() {
+        hitButton.setEnabled(false);
+        stopButton.setEnabled(false);
+        while(this.dealerScore_int<17&&dealer_hit_count<=5){
+            hit("dealer");
+        }
 
-        hit("dealer");
 
-        swapPlayer();
+
     }
 
     /**
@@ -115,10 +103,6 @@ public class Game {
         //Assign Card to applicable player if 3 less than 3 hits
         if (player.equals("player")) {
             for (int i = 0; i < 5; i++) {
-                if (player_hit_count >= 5) {
-                    hitButton.setEnabled(false);
-                    return;
-                }
                 System.out.println();
                 if (playerCards[i].getVisibility() == View.INVISIBLE) {
                     playerCards[i].setImageResource(resource);
@@ -126,6 +110,9 @@ public class Game {
                     playerScore.setText(Integer.toString(playerScore_int));
                     playerCards[i].setVisibility(View.VISIBLE);
                     player_hit_count++;
+                    if (player_hit_count >= 5) {
+                        hitButton.setEnabled(false);
+                    }
                     return;
                 }
             }
@@ -146,6 +133,8 @@ public class Game {
                 }
             }
         }
+        isOver();
+
     }
 
     /**
@@ -166,7 +155,8 @@ public class Game {
         dealer_hit_count = 0;
         playerScore.setText(Integer.toString(playerScore_int));
         dealerScore.setText(Integer.toString(dealerScore_int));
-
+        hitButton.setEnabled(true);
+        stopButton.setEnabled(true);
         deck = new Deck();
         deck.shuffle();
     }

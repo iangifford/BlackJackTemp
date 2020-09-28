@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         //BlackJack games begin with 2 cards dealt to each player
         blackJackGame.resetGame();
+
         blackJackGame.hit("player");
         blackJackGame.hit("dealer");
         blackJackGame.hit("player");
@@ -113,9 +114,7 @@ public class MainActivity extends AppCompatActivity {
         blackJackGame.hit("player");
 
         //After every hit, check if the game has been won or tied
-        if(blackJackGame.isOver()){
-            winnerField.setText(blackJackGame.winner);
-        }
+
     }
 
     /**
@@ -126,10 +125,7 @@ public class MainActivity extends AppCompatActivity {
     public void stop(View view) {
 
         //Change to the Dealer and deactivate the Hit and Stop buttons
-        blackJackGame.swapPlayer();
-        if(blackJackGame.current_player.equals("dealer")) {
-            stopButton.setEnabled(false);
-            blackJackGame.executeDealerTurn();
-        }
+        blackJackGame.executeDealerTurn();
+
     }
 }
