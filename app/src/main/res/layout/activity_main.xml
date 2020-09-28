@@ -42,8 +42,9 @@
         android:textSize="30sp" />
 
     <!-- GameBoard Identification -->
-    <View
+    <ImageView
         android:id="@+id/game_background"
+        android:src="@drawable/poker_background"
         android:layout_width="320dp"
         android:layout_height="480dp"
         android:layout_below="@+id/player_score_field"
