@@ -66,7 +66,7 @@ public class Deck {
         arrayDeck[49] = new Card("Diamonds", "Jack", 10, R.drawable.cards_50);
         arrayDeck[50] = new Card("Diamonds", "King", 10, R.drawable.cards_51);
         arrayDeck[51] = new Card("Diamonds", "Queen", 10, R.drawable.cards_52);
-
+        this.deck = new Stack<Card>();
         for (Card c : arrayDeck){
             this.deck.push(c);
         }

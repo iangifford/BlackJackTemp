@@ -111,11 +111,12 @@ public class Game {
 
         //Assign Card to applicable player if 3 less than 3 hits
         if (player.equals("player")) {
+            System.out.println(playerCards.toString());
             for (int i = 0; i < 5; i++) {
-                if (player_hit_count >= 3) {
-                    hitButton.setEnabled(false);
-                    return;
-                }
+                //if (player_hit_count >= 3) {//temp commented out to test
+                //    hitButton.setEnabled(false);
+                //    return;
+                //}
                 if (playerCards[i].getVisibility() == View.INVISIBLE) {
                     playerCards[i].setImageResource(resource);
                     playerScore_int += hit_card.point_value;
