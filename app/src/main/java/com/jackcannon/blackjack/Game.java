@@ -61,11 +61,15 @@ public class Game {
      * Switches which player has control of the buttons, and where the cards are dealt
      */
     public void swapPlayer() {
-        if (!current_player.equals("player")) {
+        if (current_player.equals("player")) {
             current_player = "dealer";
-        } else current_player = "player";
+            hitButton.setEnabled(false);
+        } else {
+            current_player = "player";
+            hitButton.setEnabled(true);
+        }
 
-        hitButton.setEnabled(true);
+
     }
 
     /**
@@ -108,19 +112,18 @@ public class Game {
         //Drawing a card and resolving its image
         Card hit_card = dealCard();
         int resource = hit_card.image_resource;
-
         //Assign Card to applicable player if 3 less than 3 hits
         if (player.equals("player")) {
-            System.out.println(playerCards.toString());
             for (int i = 0; i < 5; i++) {
-                //if (player_hit_count >= 3) {//temp commented out to test
-                //    hitButton.setEnabled(false);
-                //    return;
-                //}
+                if (player_hit_count >= 5) {
+                    hitButton.setEnabled(false);
+                    return;
+                }
+                System.out.println();
                 if (playerCards[i].getVisibility() == View.INVISIBLE) {
                     playerCards[i].setImageResource(resource);
                     playerScore_int += hit_card.point_value;
-                    playerScore.setText(playerScore_int);
+                    playerScore.setText(Integer.toString(playerScore_int));
                     playerCards[i].setVisibility(View.VISIBLE);
                     player_hit_count++;
                     return;
@@ -136,7 +139,7 @@ public class Game {
                 if (dealerCards[i].getVisibility() == View.INVISIBLE) {
                     dealerCards[i].setImageResource(resource);
                     dealerScore_int += hit_card.point_value;
-                    dealerScore.setText(dealerScore_int);
+                    dealerScore.setText(Integer.toString(dealerScore_int));
                     dealerCards[i].setVisibility(View.VISIBLE);
                     dealer_hit_count++;
                     return;
@@ -161,8 +164,8 @@ public class Game {
         dealerScore_int = 0;
         player_hit_count = 0;
         dealer_hit_count = 0;
-        playerScore.setText(playerScore_int);
-        dealerScore.setText(dealerScore_int);
+        playerScore.setText(Integer.toString(playerScore_int));
+        dealerScore.setText(Integer.toString(dealerScore_int));
 
         deck = new Deck();
         deck.shuffle();

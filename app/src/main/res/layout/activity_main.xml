@@ -132,6 +132,7 @@
         android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textColor="@color/colorBlack"/>
+
     <ImageView
         android:id="@+id/player_card_1"
         android:layout_width="75dp"
@@ -140,7 +141,9 @@
         android:layout_alignStart="@id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_1" />
+        android:contentDescription="@string/player_card_1"
+        android:visibility="invisible" />
+
     <ImageView
         android:id="@+id/player_card_2"
         android:layout_width="75dp"
@@ -149,7 +152,9 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="83dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_2" />
+        android:contentDescription="@string/player_card_2"
+        android:visibility="invisible" />
+
     <ImageView
         android:id="@+id/player_card_3"
         android:layout_width="75dp"
@@ -158,7 +163,9 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="162dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_3" />
+        android:contentDescription="@string/player_card_3"
+        android:visibility="invisible" />
+
     <ImageView
         android:id="@+id/player_card_4"
         android:layout_width="75dp"
@@ -167,7 +174,9 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="241dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_4" />
+        android:contentDescription="@string/player_card_4"
+        android:visibility="invisible" />
+
     <ImageView
         android:id="@+id/player_card_5"
         android:layout_width="75dp"
@@ -176,7 +185,8 @@
         android:layout_alignStart="@+id/game_background"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
-        android:contentDescription="@string/player_card_5" />
+        android:contentDescription="@string/player_card_5"
+        android:visibility="invisible" />
 
     <!-- GamePlay Buttons -->
     <Button

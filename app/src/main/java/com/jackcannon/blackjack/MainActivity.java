@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Cards assigned to the player
-        playerCards = new ImageView[8];
+        playerCards = new ImageView[5];
         playerCards[0] = (ImageView) findViewById(R.id.player_card_1);
         playerCards[1] = (ImageView) findViewById(R.id.player_card_2);
         playerCards[2] = (ImageView) findViewById(R.id.player_card_3);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Cards assigned to the dealer
-        dealerCards = new ImageView[8];
+        dealerCards = new ImageView[5];
         dealerCards[0] = (ImageView) findViewById(R.id.dealer_card_1);
         dealerCards[1] = (ImageView) findViewById(R.id.dealer_card_2);
         dealerCards[2] = (ImageView) findViewById(R.id.dealer_card_3);
@@ -68,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Game initialization
         blackJackGame = new Game(playerCards, dealerCards, playerScore, dealerScore, hitButton, stopButton);
-        //blackJackGame.resetGame();
+        blackJackGame.resetGame();
+        blackJackGame.hit("player");
+        blackJackGame.hit("dealer");
+        blackJackGame.hit("player");
+        blackJackGame.hit("dealer");
     }
 
     /**
@@ -112,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         //Change to the Dealer and deactivate the Hit and Stop buttons
         blackJackGame.swapPlayer();
         if(blackJackGame.current_player.equals("dealer")) {
-            hitButton.setEnabled(false);
             stopButton.setEnabled(false);
             blackJackGame.executeDealerTurn();
         }
