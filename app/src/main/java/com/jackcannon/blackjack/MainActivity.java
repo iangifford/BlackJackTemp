@@ -18,17 +18,29 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Creates the Model
+     */
     Game blackJackGame;
+
+    /**
+     * Provides access to the Card objects on the View
+     */
     ImageView[] playerCards;
     ImageView[] dealerCards;
 
+    /**
+     * Provides access to the score fields on the View
+     */
     TextView playerScore;
     TextView dealerScore;
     TextView winnerField;
 
+    /**
+     * Provides access to the buttons on the View
+     */
     Button hitButton;
     Button stopButton;
-
 
     /**
      * On Create Method
