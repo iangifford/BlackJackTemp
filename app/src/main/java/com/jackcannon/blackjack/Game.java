@@ -119,10 +119,6 @@ public class Game {
         }
         if (player.equals("dealer")) {
             for (int i = 0; i < 5; i++) {
-                if (dealer_hit_count >= 3) {
-                    hitButton.setEnabled(false);
-                    return;
-                }
                 if (dealerCards[i].getVisibility() == View.INVISIBLE) {
                     dealerCards[i].setImageResource(resource);
                     dealerScore_int += hit_card.point_value;
