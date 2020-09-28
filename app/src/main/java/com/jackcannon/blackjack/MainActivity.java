@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
             hitButton.setEnabled(false);
             stopButton.setEnabled(false);
         }
+
     }
 
     /**

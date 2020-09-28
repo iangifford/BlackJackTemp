@@ -58,11 +58,12 @@
         android:id="@+id/dealer_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dealer_tag"
         android:layout_alignTop="@+id/game_background"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"/>
+        android:shadowColor="#FFFFFF"
+        android:text="@string/dealer_tag"
+        android:textColor="@color/colorText"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/dealer_card_1"
@@ -124,25 +125,25 @@
         android:id="@+id/winner_field"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@id/dealer_card_3"
         android:layout_above="@id/player_card_3"
-        android:layout_toEndOf="@+id/dealer_card_5"
+        android:layout_below="@id/dealer_card_3"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:textSize="60sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_centerHorizontal="true" />
+        android:layout_toEndOf="@+id/dealer_card_5"
+        android:textColor="@color/colorText"
+        android:textSize="60sp" />
 
     <!-- Player / Player Cards Layout -->
     <TextView
         android:id="@+id/player_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/player_tag"
         android:layout_alignBottom="@+id/game_background"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"/>
+        android:text="@string/player_tag"
+        android:textColor="@color/colorText"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/player_card_1"

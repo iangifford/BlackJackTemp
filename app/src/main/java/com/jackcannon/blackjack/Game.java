@@ -159,13 +159,13 @@ public class Game {
                 if (playerCardImages[i].getVisibility() == View.INVISIBLE) {
                     playerCardImages[i].setImageResource(resource);
                     playerCards[i] = hit_card;
-                    playerScore.setText(Integer.toString(playerScore_int));
                     playerCardImages[i].setVisibility(View.VISIBLE);
                     player_hit_count++;
                     if (player_hit_count >= 5) {
                         hitButton.setEnabled(false);
                     }
                     isOver();
+                    playerScore.setText(Integer.toString(playerScore_int));
                     return;
                 }
             }
@@ -175,10 +175,11 @@ public class Game {
                 if (dealerCardImages[i].getVisibility() == View.INVISIBLE) {
                     dealerCardImages[i].setImageResource(resource);
                     dealerCards[i] = hit_card;
-                    dealerScore.setText(Integer.toString(dealerScore_int));
+
                     dealerCardImages[i].setVisibility(View.VISIBLE);
                     dealer_hit_count++;
                     isOver();
+                    dealerScore.setText(Integer.toString(dealerScore_int));
                     return;
                 }
             }

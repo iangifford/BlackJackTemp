@@ -9,4 +9,6 @@
     <color name="colorLightGreen">#90EE90</color>
     <color name="colorBlack">#000000</color>
     <color name="colorLightBlue">#ADD8E6</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorShadow">#000000</color>
 </resources>
