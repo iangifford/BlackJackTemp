@@ -19,8 +19,10 @@ public class Game {
     Deck deck;
     String current_player;
     String winner;
-    ImageView[] playerCards;
-    ImageView[] dealerCards;
+    ImageView[] playerCardImages;
+    ImageView[] dealerCardImages;
+    Card[] playerCards;
+    Card[] dealerCards;
     TextView playerScore;
     TextView dealerScore;
     int playerScore_int;
@@ -43,8 +45,10 @@ public class Game {
     public Game(ImageView[] playerCards, ImageView[] dealerCards, TextView playerScore, TextView dealerScore, Button hitButton, Button stopButton) {
         this.current_player = "player";
         this.deck = new Deck();
-        this.playerCards = playerCards;
-        this.dealerCards = dealerCards;
+        this.playerCardImages = playerCards;
+        this.dealerCardImages = dealerCards;
+        this.playerCards = new Card[5];
+        this.dealerCards = new Card[5];
         this.playerScore = playerScore;
         this.dealerScore = dealerScore;
         this.hitButton = hitButton;
@@ -86,7 +90,6 @@ public class Game {
      */
     public boolean isOver() {
 
-        //TODO implement method to determine if the game is over or not, and pick a winner
         return false;
     }
 
@@ -104,32 +107,32 @@ public class Game {
         if (player.equals("player")) {
             for (int i = 0; i < 5; i++) {
                 System.out.println();
-                if (playerCards[i].getVisibility() == View.INVISIBLE) {
-                    playerCards[i].setImageResource(resource);
-                    playerScore_int += hit_card.point_value;
+                if (playerCardImages[i].getVisibility() == View.INVISIBLE) {
+                    playerCardImages[i].setImageResource(resource);
                     playerScore.setText(Integer.toString(playerScore_int));
-                    playerCards[i].setVisibility(View.VISIBLE);
+                    playerCardImages[i].setVisibility(View.VISIBLE);
                     player_hit_count++;
                     if (player_hit_count >= 5) {
                         hitButton.setEnabled(false);
                     }
+                    isOver();
                     return;
                 }
             }
         }
         if (player.equals("dealer")) {
             for (int i = 0; i < 5; i++) {
-                if (dealerCards[i].getVisibility() == View.INVISIBLE) {
-                    dealerCards[i].setImageResource(resource);
-                    dealerScore_int += hit_card.point_value;
+                if (dealerCardImages[i].getVisibility() == View.INVISIBLE) {
+                    dealerCardImages[i].setImageResource(resource);
                     dealerScore.setText(Integer.toString(dealerScore_int));
-                    dealerCards[i].setVisibility(View.VISIBLE);
+                    dealerCardImages[i].setVisibility(View.VISIBLE);
                     dealer_hit_count++;
+                    isOver();
                     return;
                 }
             }
         }
-        isOver();
+
 
     }
 
@@ -139,10 +142,10 @@ public class Game {
      */
     public void resetGame() {
         for (int i = 0; i < 5; i++) {
-            playerCards[i].setVisibility(View.INVISIBLE);
-            dealerCards[i].setVisibility(View.INVISIBLE);
-            playerCards[i].setImageResource(0);
-            dealerCards[i].setImageResource(0);
+            playerCardImages[i].setVisibility(View.INVISIBLE);
+            dealerCardImages[i].setVisibility(View.INVISIBLE);
+            playerCardImages[i].setImageResource(0);
+            dealerCardImages[i].setImageResource(0);
         }
 
         playerScore_int = 0;
