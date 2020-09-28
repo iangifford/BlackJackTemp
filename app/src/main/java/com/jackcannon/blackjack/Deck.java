@@ -1,14 +1,28 @@
 package com.jackcannon.blackjack;
 
 import java.util.Collections;
-import java.util.List;
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Stack;
+
+/**
+ * Deck Class
+ * This class creates a Deck of Card objects for use in the Game
+ * CS482 Software Engineering
+ * Dr. Raunak
+ * @author Jack Cannon
+ * @author Ian Gifford
+ * @version 1.0 Initial Build
+ */
 public class Deck {
 
+    /**
+     * The Deck of Card objects arranged as a Stack
+     */
     Stack<Card> deck;
-    Random rand;
+
+    /**
+     * Deck constructor
+     * Using a stack, 52 cards are created and incorporated into a deck for use in the Game
+     */
     public Deck() {  //do index + 1 get the cards_## file name
         Card[] arrayDeck = new Card[52];
         arrayDeck[0] = new Card("Clubs", "Ace", 1, R.drawable.cards_01);
@@ -66,17 +80,26 @@ public class Deck {
         arrayDeck[49] = new Card("Diamonds", "Jack", 10, R.drawable.cards_50);
         arrayDeck[50] = new Card("Diamonds", "King", 10, R.drawable.cards_51);
         arrayDeck[51] = new Card("Diamonds", "Queen", 10, R.drawable.cards_52);
+
         this.deck = new Stack<Card>();
         for (Card c : arrayDeck){
             this.deck.push(c);
         }
     }
 
+    /**
+     * Shuffle Method
+     * This method serves to shuffle the cards in the Deck
+     */
     public void shuffle(){
         Collections.shuffle(this.deck);
 
     }
 
+    /**
+     * Draw Method
+     * @return the next card object, after shuffling
+     */
     public Card draw(){
         this.shuffle();
         return this.deck.pop();
