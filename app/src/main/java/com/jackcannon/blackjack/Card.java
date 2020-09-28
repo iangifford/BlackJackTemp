@@ -11,9 +11,24 @@ package com.jackcannon.blackjack;
  */
 public class Card {
 
+    /**
+     * Suit, as in Clubs, Spades, Hearts, Diamonds
+     */
     String suit;
+
+    /**
+     * Face Value, as in Ace, 2, 3, Jack, King, etc.
+     */
     String face_value;
+
+    /**
+     * Integer Value for the points for each Card
+     */
     int point_value;
+
+    /**
+     * The image associated with each Card
+     */
     int image_resource;
 
     /**
